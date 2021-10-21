@@ -2,5 +2,7 @@
 ## assumptions (założenia) 
 * Retrieving data from a file (Pobieranie danych z pliku)
 * Retrieving information from the user in the form of a date (Pobieranie informacji od użytkownika w postaci daty)
+* Creating interactive button for obtaining data (Stworzenie interaktywnego przycisku do pozyskiwania danych)
 * Displaying data (Wyświetlanie danych)
 * Grouping data in to tabs (Zakładki grupujące dane)
+ 
