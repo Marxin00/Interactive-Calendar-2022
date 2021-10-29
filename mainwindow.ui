@@ -91,7 +91,7 @@
      </rect>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="tab">
      <property name="whatsThis">
@@ -100,7 +100,7 @@
      <attribute name="title">
       <string>Faza księżyca</string>
      </attribute>
-     <widget class="QLabel" name="label_3">
+     <widget class="QLabel" name="label_1">
       <property name="geometry">
        <rect>
         <x>10</x>
