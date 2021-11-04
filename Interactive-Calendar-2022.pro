@@ -28,3 +28,6 @@ CONFIG += lrelease
 CONFIG += embed_translations
 
 # Default rules for deployment.
+
+RESOURCES += \
+    resource.qrc

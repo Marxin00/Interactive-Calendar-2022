@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/">
+        <file>img/now.jpg</file>
+        <file>img/ostatnia_kwarta.jpg</file>
+        <file>img/pelnia.jpg</file>
+        <file>img/pierwsza_kwadra.jpg</file>
+    </qresource>
+</RCC>

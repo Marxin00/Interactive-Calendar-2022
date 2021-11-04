@@ -32,7 +32,6 @@ void MainWindow::on_pushButton_clicked()
 QDate data=ui->dateEdit->date();// pobierz datę z widgetu.
 int numer_dnia = data.dayOfYear();// uzyskaj numer dnia w roku na podstawie daty.
 
-
 QXlsx::Document xlsx;
 
 Document xlsxR("DATA.xlsx");
@@ -44,12 +43,41 @@ Document xlsxR("DATA.xlsx");
            if ( cell != NULL )
            {
                QVariant var = cell->readValue();
-               QString x=var.toString();
-               y[col]=x;
-               qDebug() << x;
-               ui->label_1->setText(y[1]);
+                y[col] =var.toString();
+
            }
        }
+
+       ui->label_1->setText(y[1]);
+       ui->label_2->setText(y[2]);
+       ui->label_3->setText(y[3]);
+       ui->label_4->setText(y[4]);
+
+       QPixmap now_img(":/img/now.jpg");
+       QPixmap pelnia_img(":/img/pelnia.jpg");
+       QPixmap pierwsza_kwarta_img(":/img/pierwsza_kwadra.jpg");
+       QPixmap ostatnia_kwarta_img(":/img/ostatnia_kwarta.jpg");
+
+       QString now="Nów";
+       QString pelnia="Pełnia";
+       QString pierwsza="Pierwsza kwarta";
+       QString ostatnia="Ostatnia kwarta";
+
+      if(y[1]==now){
+          ui->lable_pic->setPixmap(now_img);
+      }
+      if(y[1]==pelnia){
+          ui->lable_pic->setPixmap(pelnia_img);
+
+      }
+      if(y[1]==pierwsza){
+          ui->lable_pic->setPixmap(pierwsza_kwarta_img);
+
+      }
+      if(y[1]==ostatnia){
+          ui->lable_pic->setPixmap(ostatnia_kwarta_img);
+
+      }
    }
 }
 
