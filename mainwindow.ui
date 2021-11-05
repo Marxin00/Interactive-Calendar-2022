@@ -156,7 +156,7 @@
        </font>
       </property>
       <property name="text">
-       <string>Odległość </string>
+       <string>Odległość w KM  </string>
       </property>
      </widget>
     </widget>
@@ -179,32 +179,9 @@
        </font>
       </property>
       <property name="text">
-       <string>Czyje sa dziś imieniny?</string>
+       <string>Czyje są dziś imieniny?</string>
       </property>
      </widget>
-    </widget>
-    <widget class="QWidget" name="tab_4">
-     <attribute name="title">
-      <string>wschód/zachód słońca</string>
-     </attribute>
-     <widget class="QLabel" name="label_4">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>581</width>
-        <height>301</height>
-       </rect>
-      </property>
-      <property name="text">
-       <string>TextLabel</string>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_5">
-     <attribute name="title">
-      <string>Ciekawostka</string>
-     </attribute>
     </widget>
    </widget>
   </widget>

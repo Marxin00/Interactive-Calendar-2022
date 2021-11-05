@@ -34,7 +34,7 @@ int numer_dnia = data.dayOfYear();// uzyskaj numer dnia w roku na podstawie daty
 
 QXlsx::Document xlsx;
 
-Document xlsxR("DATA.xlsx");
+Document xlsxR(":/DATA.xlsx");
    if (xlsxR.load()) // load excel file
    {
        int row = numer_dnia+1; QString y[5];
@@ -44,14 +44,12 @@ Document xlsxR("DATA.xlsx");
            {
                QVariant var = cell->readValue();
                 y[col] =var.toString();
-
            }
        }
 
        ui->label_1->setText(y[1]);
        ui->label_2->setText(y[2]);
        ui->label_3->setText(y[3]);
-       ui->label_4->setText(y[4]);
 
        QPixmap now_img(":/img/now.jpg");
        QPixmap pelnia_img(":/img/pelnia.jpg");
