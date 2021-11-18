@@ -31,3 +31,6 @@ CONFIG += embed_translations
 
 RESOURCES += \
     resource.qrc
+
+DISTFILES += \
+    README.md

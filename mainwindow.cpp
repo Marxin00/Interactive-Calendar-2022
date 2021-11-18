@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-
+#include <math.h>
+#include <stdio.h>
 
 #include "xlsxdocument.h"
 #include "xlsxchartsheet.h"
@@ -29,9 +30,42 @@ MainWindow::~MainWindow()
 void MainWindow::on_pushButton_clicked()
 {
 
-QDate data=ui->dateEdit->date();// pobierz datę z widgetu.
-int numer_dnia = data.dayOfYear();// uzyskaj numer dnia w roku na podstawie daty.
+QPixmap now_img(":/img/now.jpg");
+QPixmap pelnia_img(":/img/pelnia.jpg");
+QPixmap pierwsza_kwarta_img(":/img/pierwsza_kwadra.jpg");
+QPixmap ostatnia_kwarta_img(":/img/ostatnia_kwarta.jpg");
 
+QDate data=ui->dateEdit->date();// pobierz datę z widgetu.
+
+int jd = data.toJulianDay();// uzyskaj numer dnia w roku na podstawie daty.
+
+float faza=((jd/29.5305902778)-0.3033);
+int x= floor(faza);
+float y=faza-x;
+
+if(0<=y and y<0.25)
+{
+   ui->label_1->setText("Nów");
+   ui->lable_pic->setPixmap(now_img);
+}
+if(0.25<=y and y<0.50)
+{
+    ui->label_1->setText("pierwsza kwarta");
+    ui->lable_pic->setPixmap(pierwsza_kwarta_img);
+}
+if(0.50<=y and y<0.75)
+{
+    ui->label_1->setText("pełnia");
+    ui->lable_pic->setPixmap(pelnia_img);
+
+}
+if(0.75<=y)
+{
+    ui->label_1->setText("ostatnia kwarta");
+    ui->lable_pic->setPixmap(ostatnia_kwarta_img);
+}
+ qDebug()<<"y"<<y;
+/*
 QXlsx::Document xlsx;
 
 Document xlsxR(":/DATA.xlsx");
@@ -76,6 +110,6 @@ Document xlsxR(":/DATA.xlsx");
           ui->lable_pic->setPixmap(ostatnia_kwarta_img);
 
       }
-   }
+   }*/
 }
 
