@@ -11,6 +11,7 @@
 #include "xlsxworkbook.h"
 
 #include <QDate>
+#include <QFile>
 
 using namespace QXlsx;
 using namespace std;
@@ -26,6 +27,7 @@ MainWindow::~MainWindow()
 {
     delete ui;
 }
+
 
 void MainWindow::on_pushButton_clicked()
 {
@@ -65,6 +67,16 @@ if(0.75<=y)
     ui->lable_pic->setPixmap(ostatnia_kwarta_img);
 }
  qDebug()<<"y"<<y;
+
+ QString dzien=("C:/Users/marci/Interactive-Calendar-2022/notatki/plik_nr")+QString::number(data.dayOfYear())+(".txt");
+
+ QFile plik(dzien);
+ if(!plik.open(QIODevice::OpenModeFlag::ReadWrite)){
+     qDebug()<<"błąd";
+ }
+ plik.write("test działania");
+ plik.close();
+
 /*
 QXlsx::Document xlsx;
 
